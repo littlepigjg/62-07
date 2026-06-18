@@ -1,0 +1,48 @@
+enabled: true
+
+sources:
+  - D:\code\gy\62\62-未归类-7\62-未归类-7\backend\config
+  - D:\code\gy\62\62-未归类-7\62-未归类-7\backend\templates
+  - D:\code\gy\62\62-未归类-7\62-未归类-7\backend\logs
+
+backup_dir: D:\code\gy\62\62-未归类-7\62-未归类-7\backend\backups
+
+schedule: "0 2 * * *"
+
+encryption_key: "your-strong-encryption-key-here-32-chars"
+
+storage_type: local
+
+s3_endpoint: null
+s3_bucket: null
+s3_access_key: null
+s3_secret_key: null
+s3_region: us-east-1
+
+regions:
+  - default
+  - us-east-1
+  - eu-west-1
+
+retention:
+  daily: 30
+  weekly: 12
+  monthly: 12
+  yearly: 3
+
+notifications:
+  enabled: false
+  on_success: false
+  on_failure: true
+  on_partial: true
+  email:
+    - admin@example.com
+  webhook_url: "https://hooks.example.com/backup"
+
+compression_level: 6
+
+incremental: true
+
+verify_after_backup: true
+
+max_parallel_uploads: 3
